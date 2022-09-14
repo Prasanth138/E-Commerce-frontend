@@ -53,7 +53,7 @@ const ProductCarousel = () => {
                 products.map( product => (
                     <CarouselItem elevation={3} key={product._id}>
                         <div className="carousel-img" >
-                            <img src={product.image} alt={product.name}></img>
+                            <img src={`https://e-comerce-mern.herokuapp.com${product.image}`} alt={product.name}></img>
                         </div> 
                         <div className="info">
                             <div className="name">
