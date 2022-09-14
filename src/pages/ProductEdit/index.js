@@ -22,9 +22,6 @@ const ProductEdit = ({match, history}) => {
     const [countInStock, setCountInStock] = useState(0);
     const [uploading, setUploading] = useState(false);
 
-    
-
-
     const dispatch = useDispatch();
     
     const currentProduct = useSelector(state => state.currentProduct);
