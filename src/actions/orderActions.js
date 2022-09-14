@@ -1,6 +1,7 @@
 import axios from 'axios';
 import types from './types';
 
+const URI= "https://e-comerce-mern.herokuapp.com";
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
         dispatch({type: types.ORDER_CREATE_REQUEST});
@@ -14,7 +15,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
             }
         }
         
-        const { data } = await axios.post('/api/orders', order, config)
+        const { data } = await axios.post(`${URI}/api/orders`, order, config)
 
         dispatch({
             type: types.ORDER_CREATE_SUCCESS,
@@ -42,7 +43,7 @@ export const getOrderDetails = (id) => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/orders/${id}`, config)
+        const { data } = await axios.get(`${URI}/api/orders/${id}`, config)
 
         dispatch({
             type: types.ORDER_DETAILS_SUCCESS,
@@ -70,7 +71,7 @@ export const payOrder = (id, paymentResult) => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.put(`/api/orders/${id}/pay`, paymentResult, config)
+        const { data } = await axios.put(`${URI}/api/orders/${id}/pay`, paymentResult, config)
 
         dispatch({
             type: types.ORDER_PAY_SUCCESS,
@@ -97,7 +98,7 @@ export const getMyOrders = () => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/orders/myorders`, config)
+        const { data } = await axios.get(`${URI}/api/orders/myorders`, config)
 
         dispatch({
             type: types.ORDER_LIST_SUCCESS,
@@ -124,7 +125,7 @@ export const getOrders = () => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/orders`, config)
+        const { data } = await axios.get(`${URI}/api/orders`, config)
 
         dispatch({
             type: types.ORDERS_LIST_ADMIN_SUCCESS,
@@ -151,7 +152,7 @@ export const deliverOrder = (id) => async(dispatch, getState) => {
             }
         }  
 
-        const { data } = await axios.put(`/api/orders/${id}/deliver`,{},  config)
+        const { data } = await axios.put(`${URI}/api/orders/${id}/deliver`,{},  config)
 
         dispatch({
             type: types.ORDER_DELIVER_SUCCESS,

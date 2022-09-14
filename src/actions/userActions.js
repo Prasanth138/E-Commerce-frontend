@@ -1,5 +1,6 @@
 import axios from "axios";
 import types from "./types"
+const URI= "https://e-comerce-mern.herokuapp.com";
 
 export const login = (email, password) => async (dispatch) =>{
     try{
@@ -13,7 +14,7 @@ export const login = (email, password) => async (dispatch) =>{
             }
         }
 
-        const {data} = await axios.post('/api/users/login', {email, password}, config);
+        const {data} = await axios.post(`${URI}/api/users/login`, {email, password}, config);
 
         dispatch({
             type: types.USER_LOGIN_SUCCESS,
@@ -50,7 +51,7 @@ export const registerUser = (name, email, password) => async (dispatch) =>{
             }
         }
 
-        const {data} = await axios.post('/api/users', {name, email, password}, config);
+        const {data} = await axios.post(`${URI}/api/users`, {name, email, password}, config);
 
         dispatch({
             type: types.USER_REGISTER_SUCCESS,
@@ -87,7 +88,7 @@ export const getUserDetails = (id) => async (dispatch, getState) =>{
             }
         }
 
-        const {data} = await axios.get(`/api/users/${id}`, config);
+        const {data} = await axios.get(`${URI}/api/users/${id}`, config);
 
         dispatch({
             type: types.USER_DETAILS_SUCCESS,
@@ -119,7 +120,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) =>{
             }
         }
 
-        const {data} = await axios.put(`/api/users/profile`, user, config);
+        const {data} = await axios.put(`${URI}/api/users/profile`, user, config);
 
         dispatch({
             type: types.USER_UPDATE_PROFILE_SUCCESS,
@@ -156,7 +157,7 @@ export const getUserList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get('/api/users', config)
+        const { data } = await axios.get(`${URI}/api/users`, config)
 
         dispatch({
             type: types.USER_LIST_SUCCESS,
@@ -185,7 +186,7 @@ export const deleteUser = (id) => async(dispatch, getState) => {
             }
         };
 
-        await axios.delete(`/api/users/${id}`, config)
+        await axios.delete(`${URI}/api/users/${id}`, config)
 
         dispatch({ type: types.USER_DELETE_SUCCESS })
 

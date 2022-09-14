@@ -26,7 +26,7 @@ const GenrePage = ({match}) => {
         TweenMax.from(quoteRef, 1.5, {opacity: 0, y:40, ease: Power3.easeOut})
         TweenMax.from(prodsRef, 1.5, {opacity: 0, y:40, ease: Power3.easeOut, delay: 0.5})
         const fetchProducts = async() => {
-            const {data} = await axios.get(`/api/products/genre/${genre}`);
+            const {data} = await axios.get(`https://e-comerce-mern.herokuapp.com/api/products/genre/${genre}`);
             setProducts(data);
             setLoading(false);
         };

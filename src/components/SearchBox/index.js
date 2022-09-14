@@ -16,7 +16,7 @@ const SearchBox = () => {
             if(keyword.length < 3){
             setProducts([]);
             }else{
-                const {data} = await axios.get(`/api/products/search/${keyword}`);
+                const {data} = await axios.get(`https://e-comerce-mern.herokuapp.com/api/products/search/${keyword}`);
                 setProducts(data.slice(0,5))
             }
         }

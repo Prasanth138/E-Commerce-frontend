@@ -1,11 +1,11 @@
 import types from './types';
 import axios from 'axios';
-
+const URI= "https://e-comerce-mern.herokuapp.com";
 export const fetchProductsList = (page = '') => async(dispatch) => {
     try {
         dispatch({type: types.FETCH_PRODUCTSLIST_REQUEST})
 
-        const {data} = await axios.get(`/api/products?page=${page}`);
+        const {data} = await axios.get(`${URI}/api/products?page=${page}`);
         
         dispatch({
             type: types.FETCH_PRODUCTSLIST_SUCCESS,
@@ -24,7 +24,7 @@ export const fetchProduct = (id) => async (dispatch) => {
     try {
         dispatch({ type:types.FETCH_PRODUCT_REQUEST })
 
-        const {data} = await axios.get(`/api/products/${id}`);
+        const {data} = await axios.get(`${URI}/api/products/${id}`);
 
         dispatch({
             type: types.FETCH_PRODUCT_SUCCESS,
@@ -51,7 +51,7 @@ export const deleteProductAdmin = (id) => async(dispatch, getState) => {
             }
         }
 
-        await axios.delete(`/api/products/${id}`, config);
+        await axios.delete(`${URI}/api/products/${id}`, config);
 
         dispatch({ type: types.PRODUCT_DELETE_SUCCESS });
 
@@ -76,7 +76,7 @@ export const createProductAdmin = () => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post(`/api/products`,{}, config);
+        const { data } = await axios.post(`${URI}/api/products`,{}, config);
 
         dispatch({ 
             type: types.PRODUCT_CREATE_SUCCESS,
@@ -105,7 +105,7 @@ export const updateProductAdmin = (product) => async(dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.put(`/api/products/${product._id}`,product, config);
+        const { data } = await axios.put(`${URI}/api/products/${product._id}`,product, config);
 
         dispatch({ 
             type: types.PRODUCT_UPDATE_SUCCESS,
@@ -134,7 +134,7 @@ export const createProductReview = (productId, review) => async(dispatch, getSta
             }
         }
 
-        await axios.post(`/api/products/${productId}/reviews`, review , config);
+        await axios.post(`${URI}/api/products/${productId}/reviews`, review , config);
 
         dispatch({ 
             type: types.PRODUCT_CREATE_REVIEW_SUCCESS   

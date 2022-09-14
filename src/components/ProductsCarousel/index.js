@@ -14,7 +14,7 @@ const ProductCarousel = () => {
     useEffect(()=>{
 
         const fetchProducts = async() => {
-            const { data } = await axios.get('/api/products/top');
+            const { data } = await axios.get('https://e-comerce-mern.herokuapp.com/api/products/top');
             setProducts(data)
         }
 

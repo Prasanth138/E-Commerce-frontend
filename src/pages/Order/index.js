@@ -38,7 +38,7 @@ const Order = ({match, history}) => {
         }
         dispatch({ type: types.ORDER_CREATE_RESET })
         const addPayPalScript = async () => {
-            const {data: clientId } = await axios.get('/api/config/paypal');
+            const {data: clientId } = await axios.get('https://e-comerce-mern.herokuapp.com/api/config/paypal');
             const script = document.createElement('script');
 
             script.type = 'text/javascript';
