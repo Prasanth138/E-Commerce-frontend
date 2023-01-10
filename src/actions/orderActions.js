@@ -1,7 +1,7 @@
 import axios from 'axios';
 import types from './types';
 
-const URI= "https://e-comerce-mern.herokuapp.com";
+const URI= "https://e-commerce-backend-seven.vercel.app";
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
         dispatch({type: types.ORDER_CREATE_REQUEST});

@@ -14,7 +14,7 @@ const ProductCarousel = () => {
     useEffect(()=>{
 
         const fetchProducts = async() => {
-            const { data } = await axios.get('https://e-comerce-mern.herokuapp.com/api/products/top');
+            const { data } = await axios.get('https://e-commerce-backend-seven.vercel.app/api/products/top');
             setProducts(data)
         }
 
@@ -53,7 +53,7 @@ const ProductCarousel = () => {
                 products.map( product => (
                     <CarouselItem elevation={3} key={product._id}>
                         <div className="carousel-img" >
-                            <img src={`https://e-comerce-mern.herokuapp.com${product.image}`} alt={product.name}></img>
+                            <img src={`https://e-commerce-backend-seven.vercel.app${product.image}`} alt={product.name}></img>
                         </div> 
                         <div className="info">
                             <div className="name">

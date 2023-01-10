@@ -13,7 +13,7 @@ const SearchPage = ({match}) => {
 
     useEffect(()=>{
         const fetchProducts = async() => {
-            const { data } = await axios.get(`https://e-comerce-mern.herokuapp.com/api/products/search/${match.params.keyword}`)
+            const { data } = await axios.get(`https://e-commerce-backend-seven.vercel.app/api/products/search/${match.params.keyword}`)
             setProducts(data);
             setLoading(false);
         }

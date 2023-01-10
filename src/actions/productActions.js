@@ -1,6 +1,6 @@
 import types from './types';
 import axios from 'axios';
-const URI= "https://e-comerce-mern.herokuapp.com";
+const URI= "https://e-commerce-backend-seven.vercel.app";
 export const fetchProductsList = (page = '') => async(dispatch) => {
     try {
         dispatch({type: types.FETCH_PRODUCTSLIST_REQUEST})
