@@ -19,7 +19,7 @@ function Product({product}) {
             <StyledLink to={`/product/${product._id}`} >
             <CardContainer elevation={5}>
                 <ImageContainer className='card-img'>
-                    <img src={`https://e-commerce-backend-seven.vercel.app${product.image}`} alt={product.name}/>
+                    <img src={`https://e-commerce-backend-aeuw.onrender.com${product.image}`} alt={product.name}/>
                 </ImageContainer>
                 <Info>
                     <h4>{product.name}</h4>

@@ -104,7 +104,7 @@ function Product({match, history}) {
                         <Grid item md={7} sm={7} xs={12} ref={ el => divRef = el }
                         style={{backgroundColor:'#f9f9f9f9'}}>
                             <ImgAndInfo>
-                            <img ref={ el => imgRef = el } src={`https://e-commerce-backend-seven.vercel.app${product.image}`} alt={product.name} />
+                            <img ref={ el => imgRef = el } src={`https://e-commerce-backend-aeuw.onrender.com${product.image}`} alt={product.name} />
                             <InfoContainer component='div'>
                             <h2 ref={ el => nameRef = el } >{product.name}</h2>
                             <p ref={ el => authorRef = el } >Author: <strong>{product.author}</strong></p>

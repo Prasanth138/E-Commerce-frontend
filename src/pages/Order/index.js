@@ -38,7 +38,7 @@ const Order = ({match, history}) => {
         }
         dispatch({ type: types.ORDER_CREATE_RESET })
         const addPayPalScript = async () => {
-            const {data: clientId } = await axios.get('https://e-commerce-backend-seven.vercel.app/api/config/paypal');
+            const {data: clientId } = await axios.get('https://e-commerce-backend-aeuw.onrender.com/api/config/paypal');
             const script = document.createElement('script');
 
             script.type = 'text/javascript';
@@ -131,7 +131,7 @@ const Order = ({match, history}) => {
                             order.orderItems.map( item => (
                                 <div key={item._id}>
                                 <OrderItem>
-                                    <img style= {{width: '50px'}} src={`https://e-commerce-backend-seven.vercel.app${item.image}`} alt={item.name} />
+                                    <img style= {{width: '50px'}} src={`https://e-commerce-backend-aeuw.onrender.com${item.image}`} alt={item.name} />
                                     <p>{item.name}</p>
                                     <p>{`${item.qty} x ${item.price} = ${item.qty*item.price}`}</p>
                                 </OrderItem>

@@ -62,7 +62,7 @@ const ProductEdit = ({match, history}) => {
                 }
             }
 
-            const { data } = await axios.post('https://e-commerce-backend-seven.vercel.app/api/upload', formData, config);
+            const { data } = await axios.post('https://e-commerce-backend-aeuw.onrender.com/api/upload', formData, config);
 
             setImage(data)
             setUploading(false)

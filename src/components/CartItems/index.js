@@ -28,7 +28,7 @@ const CartItems = ({items}) => {
                     items.map((item, index)=>(
                     <TableRow ref={el => rowRef.current[index] = el} key={item.product}>
                         <TableCell align="left">
-                            <Image src={`https://e-commerce-backend-seven.vercel.app${item.image}`} alt={item.name}/>
+                            <Image src={`https://e-commerce-backend-aeuw.onrender.com${item.image}`} alt={item.name}/>
                         </TableCell>
                         <TableCell align="left">
                             {<StyledLink to={`/product/${item.product}`}>{<h3>{item.name}</h3>}</StyledLink>}

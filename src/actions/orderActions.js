@@ -1,7 +1,7 @@
 import axios from 'axios';
 import types from './types';
 
-const URI= "https://e-commerce-backend-seven.vercel.app";
+const URI= "https://e-commerce-backend-aeuw.onrender.com";
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
         dispatch({type: types.ORDER_CREATE_REQUEST});
